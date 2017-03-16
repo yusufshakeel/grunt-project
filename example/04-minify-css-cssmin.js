@@ -1,3 +1,9 @@
+/**
+ * Author: Yusuf Shakeel
+ * Date: 14-mar-2017 tue
+ *
+ * Save this file as "Gruntfile.js" in your project folder.
+ */
 module.exports = function(grunt) {
 
 	//project configurations
