@@ -3,19 +3,29 @@ module.exports = function(grunt) {
 	//project configurations
 	grunt.initConfig({
 
+		//this is for minifying css files
 		cssmin : {
 			target : {
-				src : ["css/style1.css", "css/style2.css"],
+				src : ["css/*.css"],
 				dest : "dist/style.min.css"
+			}
+		},
+
+		//this is the watch
+		watch : {
+			scripts : {
+				files : ["css/*.css"],
+				tasks : ["cssmin"]
 			}
 		}
 
 	});
 
-	//load cssmin plugin
+	//load plugin
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	//create default task
-	grunt.registerTask("default", ["cssmin"]);
+	grunt.registerTask("default", ["watch"]);
 
 };
